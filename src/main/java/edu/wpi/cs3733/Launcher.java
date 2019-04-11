@@ -28,6 +28,7 @@ public class Launcher extends Application {
 			return;
 		}
 
+
 		primaryStage.setTitle("CS3733 Assignment 5");
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
