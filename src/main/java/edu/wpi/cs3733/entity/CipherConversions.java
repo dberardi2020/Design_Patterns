@@ -71,7 +71,7 @@ class CipherConversions {
             case ' ':
                 return 0;
             default:
-                throw new IllegalArgumentException("Invalid Input");
+                throw new IllegalArgumentException("Invalid Character Used");
         }
     }
 

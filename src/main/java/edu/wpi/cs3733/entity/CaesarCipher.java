@@ -8,7 +8,6 @@ public class CaesarCipher implements Observer {
 	private CipherConversions converter = new CipherConversions();
 
 	private void setText(String text){
-
 		String finalString = "";
 		char[] tempText = text.toCharArray();
 

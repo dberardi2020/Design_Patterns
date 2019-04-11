@@ -8,19 +8,18 @@ import java.util.List;
  */
 public class Message implements Observable {
     private List<Observer> observers = new ArrayList<>();
-    private String message = "";
+    private String message;
 
     private String getText() {
         return message;
     }
 
-    public void setText(String text) throws IllegalArgumentException{
-        if (text.length() > 140)
+    public void setText(String text) {
+        message = "";
+        if (text.length() < 140 && validChars(text))
         {
-            throw new IllegalArgumentException("String is Too Long");
+            message = text;
         }
-
-        message = text;
         notifyObservers();
     }
 
@@ -34,5 +33,10 @@ public class Message implements Observable {
         for (Observer observer : observers) {
             observer.notify(getText());
         }
+    }
+
+    private boolean validChars(String text)
+    {
+        return text.matches("^[a-zA-Z' ']*$");
     }
 }
