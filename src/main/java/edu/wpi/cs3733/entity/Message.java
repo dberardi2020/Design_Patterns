@@ -16,8 +16,7 @@ public class Message implements Observable {
 
     public void setText(String text) {
         message = "";
-        if (text.length() < 140 && validChars(text))
-        {
+        if (text.length() < 140 && validChars(text)) {
             message = text;
         }
         notifyObservers();
@@ -35,8 +34,7 @@ public class Message implements Observable {
         }
     }
 
-    private boolean validChars(String text)
-    {
-        return text.matches("^[a-zA-Z' ']*$");
+    private boolean validChars(String text) {
+        return text.matches("^[a-zA-Z\\s]*$");
     }
 }
